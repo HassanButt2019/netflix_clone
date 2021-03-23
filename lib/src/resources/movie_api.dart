@@ -4,6 +4,7 @@ import 'package:http/http.dart'show Client;
 import 'package:netflix/src/models/image_model.dart';
 import 'package:netflix/src/models/item_model.dart';
 import 'package:netflix/src/models/movie_detail_model.dart';
+import 'package:netflix/src/models/movie_image_model.dart';
 
 
 
@@ -33,7 +34,7 @@ class MovieProvider{
     }
   }
 
-  Future<ImageModel> fetchMovieImages(int movieId)async{
+  Future<MovieImageModel> fetchMovieImages(int movieId)async{
     final url = 'http://api.themoviedb.org/3/movie/$movieId/images?api_key=$_apiKey';
     print("GET REQUEST TO $url");
 
@@ -43,7 +44,7 @@ class MovieProvider{
       );
       print(response.body.toString());
       if(response.statusCode == 200){
-        return ImageModel.fromJson(json.decode(response.body));
+        return MovieImageModel.fromJson(json.decode(response.body));
       }else
       {
         throw Exception('Failed To Load Data');

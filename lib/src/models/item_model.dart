@@ -4,7 +4,7 @@ class ItemModel extends BaseModel {
   int _page;
   int _total_result;
   int _total_pages;
-  List<_Result> _results = [];
+  List<_Result> results = [];
 
   ItemModel.fromJsom(Map<String, dynamic> parsedJson) {
     print(parsedJson['results'].length);
@@ -16,7 +16,7 @@ class ItemModel extends BaseModel {
       _Result _result = _Result(parsedJson['results'][i]);
       temp.add(_result);
     }
-    _results = temp;
+    results = temp;
   }
 
   // List<_Result> get results => _results;
@@ -27,7 +27,7 @@ class ItemModel extends BaseModel {
 
 class _Result {
   int _vote_count;
-  int _id;
+  int id;
   bool _video;
   var _vote_average;
   String _title;
@@ -45,7 +45,7 @@ class _Result {
 
   _Result(result) {
     _vote_count = result['vote_count'];
-    _id = result['id'];
+    id = result['id'];
     _video = result['video'];
     _vote_average = result['vote_average'];
     _title = result['title'];
@@ -77,6 +77,6 @@ class _Result {
   String get vote_avergae => _vote_average;
   bool get vedio => _video;
 
-  int get id => _id;
+  int get idd => id;
   int get vote_count => _vote_count;
 }

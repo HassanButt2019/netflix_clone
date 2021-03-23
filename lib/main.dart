@@ -10,6 +10,7 @@ class Netflix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title:'Movie List',
       theme:ThemeData(
         primarySwatch: Colors.red,

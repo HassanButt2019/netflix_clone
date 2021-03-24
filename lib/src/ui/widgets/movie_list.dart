@@ -69,7 +69,7 @@ class _MovieListState extends State<MovieList> {
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Image.network(
-        "https:/image.tmbd.org/t/p/w500$imagePath",
+        "https://image.tmbd.org/t/p/w500$imagePath",
         fit: BoxFit.cover,
         width: itemHeight * 4 / 3,
         height: itemHeight / 2,

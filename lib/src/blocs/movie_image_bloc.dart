@@ -5,7 +5,7 @@ import 'package:rxdart/rxdart.dart';
 
 
 class ImageBloc extends BaseBloc<MovieImageModel>{
-  Observable<MovieImageModel> get movielist => fetcher.stream;
+  Observable<MovieImageModel> get movieImages => fetcher.stream;
   fetchMovieList(int movieId) async{
     MovieImageModel itemModel = await repository.fetchMovieImages(movieId);
     fetcher.sink.add(itemModel);
